@@ -10,10 +10,11 @@ public class MonoAlphabeticCipher implements Cipher {
 	public String getSecretAlphabet() {
 		return this.secretAlphabet;
 	}
-	//Exception werfen!!
-	protected void setSecretAlphabet(String text) {
+	protected void setSecretAlphabet(String text) throws MyException {
 		if(text.length()==30){
 			this.secretAlphabet=text;
+		}else{
+			throw new MyException("Bitte einen gueltigen Wert eingeben");
 		}
 	}
 	@Override
